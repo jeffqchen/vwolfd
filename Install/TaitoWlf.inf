@@ -1,0 +1,62 @@
+[Version]
+Signature	= $CHICAGO$
+Provider	= %DEFAULTPROVIDER%
+Class		= SYSTEM
+
+[Manufacturer]
+%VENDOR%	= TAITO
+
+[TAITO]
+%PRODUCTNAME%	= TAITOSUITE,,TAITO_DRIVER
+
+;===============================
+;Source Disk
+;===============================
+[SourceDisksNames]
+1="Taito Wolf Arcade System Driver",,
+
+[SourceDiskFiles]
+VWOLFD.vxd	= 1
+TaitoUtl.exe	= 1
+
+[DestinationDirs]
+VXD.Copy	= 11
+Utility.Copy	= 10
+
+;===============================
+;Install
+;===============================
+[TAITOSUITE]
+DriverVer=08/19/2024, 1.0.0.0
+CopyFiles	= VXD.Copy,   Utility.Copy
+AddReg		= VXD.AddReg, Utility.AddReg
+Reboot
+
+;===============================
+;Copy List
+;===============================
+[VXD.Copy]
+VWOLFD.vxd
+
+[Utility.Copy]
+TaitoUtl.exe
+
+;===============================
+;Add Reg
+;===============================
+[VXD.AddReg]
+HKLM,System\CurrentControlSet\Services\VxD\VWOLFD,StaticVxD,,VWOLFD.vxd
+HKR,,Driver,,VWOLFD.vxd
+
+[Utility.AddReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,TaitoUtility,,TaitoUtl.exe
+
+;===============================
+;Strings
+;===============================
+[Strings]
+DEFAULTPROVIDER	= "Jeff Chen"
+VENDOR		= "Jeff Chen"
+PRODUCTNAME	= "Taito Wolf Arcade System Driver"
+VXDNAME		= "VWOLFD"
+UTILNAME	= "TaitoUtility"

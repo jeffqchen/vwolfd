@@ -1,0 +1,45 @@
+ VWOLFD
+
+ Timestamp is 66c37fa5 (Mon Aug 19 13:23:49 2024)
+
+ Preferred load address is 00400000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00000008H .rdata                  CODE
+ 0001:00000010 00000093H .text                   CODE
+ 0001:000000a4 0000005cH _LDATA                  CODE
+ 0001:00000100 0000036bH _LTEXT                  CODE
+ 0002:00000000 0000001dH _RCODE                  CODE
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000000       _dogHouse                  00401000     sysctl.obj
+ 0001:00000004       _videoSwitch               00401004     sysctl.obj
+ 0001:00000010       _vwolfd_device_init@0      00401010 f   sysctl.obj
+ 0001:000000a4       VWOLFD_DDB                 004010a4     sysctlasm.obj
+ 0001:000000f4       _enableWatchdog            004010f4     sysctl.obj
+ 0001:000000f8       _videoMode                 004010f8     sysctl.obj
+ 0001:000000fc       _dogTimer                  004010fc     sysctl.obj
+ 0001:00000100       vwolfd_Control_Proc        00401100 f   sysctlasm.obj
+ 0001:00000130       _vwolfd_DeviceIOControl@16 00401130 f   sysctl.obj
+ 0001:000002ba       _vwolfd_sys_exit@0         004012ba f   sysctl.obj
+ 0001:000002f0       _watchdogThread            004012f0 f   vwolfd.obj
+ 0001:0000031f       _vwolfdGetVersion@4        0040131f f   vwolfd.obj
+ 0001:00000359       _vwolfdPollState@4         00401359 f   vwolfd.obj
+ 0001:00000398       _vwolfdSetState@4          00401398 f   vwolfd.obj
+ 0001:000003d7       _vwolfdDogSpawn@0          004013d7 f   vwolfd.obj
+ 0001:00000410       _vwolfdDogEnable@0         00401410 f   vwolfd.obj
+ 0001:0000041f       _vwolfdDogDisable@0        0040141f f   vwolfd.obj
+ 0001:0000042e       _vwolfdDogToggle@0         0040142e f   vwolfd.obj
+ 0001:00000444       _vwolfdVideoSplash@0       00401444 f   vwolfd.obj
+ 0001:00000451       _vwolfdVideoVoodoo@0       00401451 f   vwolfd.obj
+ 0001:0000045e       _vwolfdVideoGrid@0         0040145e f   vwolfd.obj
+ 0002:00000000       Wolf_Real_Init_Proc        00401600 f   sysctlasm.obj
+
+ entry point at        0000:00000000
+
+ Static symbols
+
+ 0001:00000080       _Set_Global_Time_Out       00401080 f   vwolfd.obj
+ 0001:00000048       _Set_Global_Time_Out       00401048 f   sysctl.obj
+ 0001:0000006b       _Cancel_Time_Out           0040106b f   sysctl.obj
