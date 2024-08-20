@@ -30,7 +30,9 @@ Copy the file to the Windows directory and use one of the typical means to load 
 - Adding a line in SYSTEM.INI
 - Add an VxD entry in sytem registry.
 
-I have provided an INF file to install the VxD alongside the Windows utility as a system device in the `TaitoUtl` project. You can find it over [Here](https://github.com/jeffqchen/TaitoUtl/releases)
+I have provided an INF file to install the VxD alongside the Windows utility as a system device in the `TaitoUtl` project.
+
+You can download the package over [Here](https://github.com/jeffqchen/TaitoUtl/releases)
 
 -------------
 
