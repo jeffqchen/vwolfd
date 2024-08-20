@@ -20,7 +20,7 @@ By setting up an auto renewing watchdog kicking callback, the video switch state
 
 ### Early Watchdog Kicking
 
-During system boot, the VxD will switch the JAMMA video output to calibration grid mode and kick the watchdog once, before the actual VMM loading stage, in order to prevent the auto-triggered system hard reset.
+When system boots, during the real mode initialization stage `REAL_INIT`, the VxD will switch the JAMMA video output to calibration grid mode and kick the watchdog once, before the actual device initialization `DEVICE_INIT` stage, in order to prevent the auto-triggered system hard reset.
 
 -------------
 
