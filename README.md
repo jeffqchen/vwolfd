@@ -1,6 +1,6 @@
 # vwolfd - Taito Wolf System VxD driver for Windows 98
 
-This is a VxD driver for the Taito Wolf System running Windows 98. It provides a hardware watchdog kicking service, as well as video output switching functionality.
+This is a VxD driver for the Taito Wolf System running Windows 98. It provides a hardware watchdog kicking service, as well as video output switching functionality through DeviceIOControl messages.
 
 -------------
 
