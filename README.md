@@ -14,7 +14,7 @@ This VxD provides various DeviceIOControl message handling for switching between
 
 ### Watchdog Kicking
 
-The Taito Wolf System arcade board has a 3-pin output (Connector R) that connects to the PC motherboard's reset switch pins. It triggers every 64 seconds if the watchdog on the management CPLD is not kicked. This also resets the JAMMA output to the default splash screen.
+The Taito Wolf System arcade board has a 3-pin output `Connector R` that connects to the PC motherboard's reset switch pins. It triggers every 64 seconds if the watchdog on the management CPLD is not kicked. This also resets the JAMMA output to the default splash screen.
 
 By setting up an auto renewing watchdog kicking callback, the video switch state will be maintained.
 
@@ -71,7 +71,7 @@ When fed a value equal or greater than 0x30, the video output is switched to the
 
 ## Watchdog
 
-The arcade board has a built-in timer-based watchdog that kicks in every 64 seconds to reset the video output as well as triggering connector R, which is connected to the reset pins to the PC motherboard below. In order to surpress the trigger, `address 0xCB200` needs to be fed SOMETHING freqently.
+The arcade board has a built-in timer-based watchdog that kicks in every 64 seconds to reset the video output as well as triggering `Connector R`, which is connected to the reset pins to the PC motherboard below. In order to surpress the trigger, `address 0xCB200` needs to be fed SOMETHING freqently.
 
 In the game code, this address is fed `0xFF` on every frame. However from the testing, it seems every few seconds is fine. Also considering not interfering with the actual game code, I settled with once per second. This value can be adjusted easily in the source code.
 
