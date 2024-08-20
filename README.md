@@ -24,6 +24,16 @@ During system boot, the VxD will switch the JAMMA video output to calibration gr
 
 -------------
 
+## Installation
+
+Copy the file to the Windows directory and use one of the typical means to load a VxD.
+- Adding a line in SYSTEM.INI
+- Add an VxD entry in sytem registry.
+
+I have provided an INF file to install the VxD alongside the Windows utility as a system device in the TaitoUtl project. You can find it over [Here](https://github.com/jeffqchen/TaitoUtl)
+
+-------------
+
 ## How To Build On Your Own
 
 This code compiles under Windows 98 Driver Development Kit, aka 98DDK, version 5.0.2516.1900.
