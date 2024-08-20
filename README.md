@@ -65,9 +65,9 @@ On power up, `U73 CPLD` will read the splash screen data on the `U71 EPROM` and 
 From my experiments, odd numbers below 0x30 will trigger the splash screen, and even numbers below 0x30 will trigger the screen test grid screen.
 
 When fed a value equal or greater than 0x30, the video output is switched to the 3Dfx Voodoo, which will show the actual 3D image generated. More specifically, the following values were used by the game code:
-`0x30`: During 3Dfx spinning logo
-`0x3D`: During normal gameplay
-`0x31`: During the test mode
+- `0x30`: During 3Dfx spinning logo
+- `0x3D`: During normal gameplay
+- `0x31`: During the test mode
 
 ## Watchdog
 
