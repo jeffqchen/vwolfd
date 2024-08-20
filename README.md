@@ -1,6 +1,6 @@
 # vwolfd - Taito Wolf System VxD driver for Windows 98
 
-This is a VxD driver for the Taito Wolf System running Windows 98. It provides a hardware watchdog kicking service, as well as video output switching functionality through DeviceIOControl messages.
+This is a VxD driver for the Taito Wolf System running Windows 98. It provides a hardware watchdog kicking service, as well as video output switching functionality through `DeviceIOControl` messages.
 
 -------------
 
@@ -8,7 +8,7 @@ This is a VxD driver for the Taito Wolf System running Windows 98. It provides a
 
 ### JAMMA Output Switching
 
-The Taito Wolf System arcade board shows a static splash screen when powered on. You need to feed values into address 0xCB600 in order to switch it.
+The Taito Wolf System arcade board shows a static splash screen when powered on. You need to feed values into `address 0xCB600` in order to switch it.
 
 This VxD provides various DeviceIOControl message handling for switching between different outputs (Splash / Grid / Vodooo).
 
@@ -30,13 +30,13 @@ Copy the file to the Windows directory and use one of the typical means to load 
 - Adding a line in SYSTEM.INI
 - Add an VxD entry in sytem registry.
 
-I have provided an INF file to install the VxD alongside the Windows utility as a system device in the TaitoUtl project. You can find it over [Here](https://github.com/jeffqchen/TaitoUtl/releases)
+I have provided an INF file to install the VxD alongside the Windows utility as a system device in the `TaitoUtl` project. You can find it over [Here](https://github.com/jeffqchen/TaitoUtl/releases)
 
 -------------
 
 ## How To Build On Your Own
 
-This code compiles under Windows 98 Driver Development Kit, aka 98DDK, version 5.0.2516.1900.
+This code compiles under `Windows 98 Driver Development Kit`, aka `98DDK`, `version 5.0.2516.1900`.
 
 Create a directory named vwolfd under the src folder of 98DDK, then place all the source code inside.
 
@@ -60,19 +60,19 @@ The Taito Wolf System is controlled by the onboard CPLD U46. It's responsible of
 
 The JAMMA edge video output of this board can be switched among 3 modes - Logo Splash / Test Grid / Voodoo
 
-On power up, U73 CPLD will read the splash screen data on the EPROM U71 and present it on the video output on the JAMMA video output. The output will stay in this state unless U46 CPLD received certain commands on address 0XCB600.
+On power up, `U73 CPLD` will read the splash screen data on the `U71 EPROM` and present it on the video output on the JAMMA video output. The output will stay in this state unless `U46 CPLD` received certain commands on `address 0XCB600`.
 
 From my experiments, odd numbers below 0x30 will trigger the splash screen, and even numbers below 0x30 will trigger the screen test grid screen.
 
 When fed a value equal or greater than 0x30, the video output is switched to the 3Dfx Voodoo, which will show the actual 3D image generated. More specifically, the following values were used by the game code:
-0x30: During 3Dfx spinning logo
-0x3D: During normal gameplay
-0x31: During the test mode
+`0x30`: During 3Dfx spinning logo
+`0x3D`: During normal gameplay
+`0x31`: During the test mode
 
 ## Watchdog
 
-The arcade board has a built-in timer-based watchdog that kicks in every 64 seconds to reset the video output as well as triggering connector R, which is connected to the reset pins to the PC motherboard below. In order to surpress the trigger, address 0xCB200 needs to be fed SOMETHING freqently.
+The arcade board has a built-in timer-based watchdog that kicks in every 64 seconds to reset the video output as well as triggering connector R, which is connected to the reset pins to the PC motherboard below. In order to surpress the trigger, `address 0xCB200` needs to be fed SOMETHING freqently.
 
-In the game code, this address is fed 0xFF on every frame. However from the testing, it seems every few seconds is fine. Also considering not interfering with the actual game code, I settled with once per second. This value can be adjusted easily in the source code.
+In the game code, this address is fed `0xFF` on every frame. However from the testing, it seems every few seconds is fine. Also considering not interfering with the actual game code, I settled with once per second. This value can be adjusted easily in the source code.
 
-Curiously, 0xCB200 is also the 2P button data is read from. My guess is that it's not the value but the action of writing to this address that kicks the watchdog.
+Curiously, `address 0xCB200` is also the 2P button data is read from. My guess is that it's not the value but the action of writing to this address that kicks the watchdog.
