@@ -62,7 +62,7 @@ The Taito Wolf System is controlled by the onboard CPLD U46. It's responsible of
 
 The JAMMA edge video output of this board can be switched among 3 modes - Logo Splash / Test Grid / Voodoo
 
-On power up, `U73 CPLD` will read the splash screen data on the `U71 EPROM` and present it on the video output on the JAMMA video output. The output will stay in this state unless `U46 CPLD` received certain commands on `address 0XCB600`.
+On power up, `U73 CPLD` will read the splash screen data on the `U71 EPROM` and present it on the video output on the JAMMA video output. The output will stay in this state unless `U46 CPLD` received certain commands on `address 0xCB600`.
 
 From my experiments, odd numbers below 0x30 will trigger the splash screen, and even numbers below 0x30 will trigger the screen test grid screen.
 
