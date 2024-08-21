@@ -42,9 +42,9 @@ This code compiles under `Windows 98 Driver Development Kit`, aka `98DDK`, `vers
 
 Place all the files under `98DDK\src\vwolfd`.
 
-Compile with the build command `build -cZ`. The compiled filed can be found under .\vwolfd\obj\i386
+Compile with the build command `build -cZ`. The compiled filed can be found under `.\vwolfd\obj\i386`.
 
-You can find Visuial Studio 6 Workspace files in the directory. I created them so you can open the project and view them in Visual Studio. The code cannot finish compiling in VS environment, but compiling individual files seem to work ok for spotting coding errors.
+*You can find Visuial Studio 6 Workspace files in the directory. I created them so you can open the project and view them in Visual Studio. The code cannot finish compiling in VS environment, but compiling individual files seem to work ok for spotting coding errors.*
 
 -------------
 
